@@ -8,15 +8,13 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
         List<City> cities = new ArrayList<City>();
         Human h = new Human(java.time.LocalDate.now());
         Human h2 = new Human(java.time.LocalDate.now().plusDays(1));
         cities.add(new City(12,"wwqw",new Coordinates(12F,12F), LocalDate.now().atStartOfDay(),1221L,323,434,4334L,4343, Government.JUNTA,h));
-        cities.add(new City(13,"wqw",new Coordinates(12F,12F), LocalDate.now().atStartOfDay(),1221L,323,434,4334L,4343,Government.JUNTA,h2));
+        cities.add(new City(13,"wqw",new Coordinates(11F,12F), LocalDate.now().atStartOfDay(),1221L,323,434,4334L,4343,Government.JUNTA,h2));
         for (City c : cities) {
             System.out.println(c);
         }
@@ -24,8 +22,6 @@ public class Main {
 
 
 
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
 
     }
 }
