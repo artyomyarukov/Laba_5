@@ -1,13 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <cities>
     <city>
+        <id>1</id>
+        <name>Moscow</name>
+        <coordinates>
+            <x>55.75</x>
+            <y>37.62</y>
+        </coordinates>
+        <creationDate>2025-03-13T00:19:48.3051702</creationDate>
+        <area>2511</area>
+        <population>12655050</population>
+        <metersAboveSeaLevel>156</metersAboveSeaLevel>
+        <telephoneCode>495</telephoneCode>
+        <agglomeration>20000000</agglomeration>
+        <government>REPUBLIC</government>
+        <governor>
+            <birthday>1960-01-01</birthday>
+        </governor>
+    </city>
+    <city>
         <id>2</id>
         <name>Moscow</name>
         <coordinates>
-            <x>45.73</x>
+            <x>55.75</x>
             <y>37.62</y>
         </coordinates>
-        <creationDate>2025-03-12T20:41:50.2171888</creationDate>
+        <creationDate>2025-03-13T00:20:34.038448</creationDate>
         <area>2511</area>
         <population>12655050</population>
         <metersAboveSeaLevel>156</metersAboveSeaLevel>

@@ -5,36 +5,37 @@ import managers.DumpManager;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Collection;
 import java.util.LinkedHashSet;
+import java.util.Scanner;
 import java.util.Set;
 
 public class Main {
     public static void main(String[] args)throws Ask.AskBreak {
+        // Создаем Scanner для чтения ввода пользователя
+        Scanner scanner = new Scanner(System.in);
+
+        // Запрашиваем имя файла у пользователя
+        System.out.print("Введите имя файла: ");
+        String filename = scanner.nextLine().trim();
+
+        // Создаем DumpManager и CollectionManager
         DumpManager dumpManager = new DumpManager();
-        CollectionManager manager = new CollectionManager(dumpManager, "cities.xml");
+        CollectionManager manager = new CollectionManager(dumpManager, filename);
 
         // Загружаем коллекцию из файла при запуске
-        if (!manager.init()) {
-            System.out.println("Ошибка при загрузке коллекции из файла.");
-            return;
-        }
-
+        Collection<City> loadedCities = dumpManager.loadFromFile(filename);
+        manager.getCollection().addAll(loadedCities);
 
         // Выводим текущую коллекцию
         System.out.println("Текущая коллекция:");
         System.out.println(manager);
 
-        // Добавляем хук для сохранения коллекции при завершении программы
-        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-            System.out.println("Сохранение коллекции перед завершением программы...");
-            manager.saveCollection();
-        }));
-
         // Пример добавления нового города
         City newCity = new City(
                 manager.getFreeId(), // Генерация уникального ID
                 "Moscow",
-                new Coordinates(45.73f, 37.62f),
+                new Coordinates(55.75f, 37.62f),
                 LocalDateTime.now(), // Текущая дата и время
                 2511L, // area
                 12655050, // population
@@ -55,8 +56,13 @@ public class Main {
         System.out.println("Коллекция после добавления:");
         System.out.println(manager);
 
-        // Программа завершается, и хук сохраняет коллекцию в файл
+        // Сохраняем коллекцию в файл
+        dumpManager.saveToFile(manager.getCollection(), filename);
+
+        // Закрываем Scanner
+        scanner.close();
     }
 }
+
 
 

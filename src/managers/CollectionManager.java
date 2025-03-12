@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 import java.util.*;
 
 public class CollectionManager {
-    private int currentId = 1; // Счётчик для генерации уникальных ID
+    private int currentId = 0; // Счётчик для генерации уникальных ID
     private LinkedHashSet<City> collection = new LinkedHashSet<>(); // Основная коллекция
     private LocalDateTime lastInitTime; // Время последней инициализации
     private LocalDateTime lastSaveTime; // Время последнего сохранения
@@ -138,7 +138,7 @@ public class CollectionManager {
     public boolean init() {
         collection.clear();
         try {
-            dumpManager.loadFromFile(collection,filename); // Читаем коллекцию из файла
+            dumpManager.loadFromFile(filename); // Читаем коллекцию из файла
         } catch (Exception e) {
             System.err.println("Ошибка при загрузке коллекции: " + e.getMessage());
             return false;
@@ -147,6 +147,7 @@ public class CollectionManager {
 
         // Проверяем на дубликаты и обновляем currentId
         for (City city : collection) {
+            System.out.println(city);
             if (byId(city.getId()) != null) { // Если найден дубликат
                 collection.clear();
                 return false;
