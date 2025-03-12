@@ -5,7 +5,7 @@ import java.lang.IllegalStateException;
 import java.util.Scanner;
 
 
-public class StandartConsole {
+public class StandartConsole implements Console {
     private static final String P1 = "$ ";
     private static Scanner fileScanner = null;
     private static Scanner defScanner = new Scanner(System.in);

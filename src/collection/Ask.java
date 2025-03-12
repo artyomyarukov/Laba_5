@@ -39,7 +39,6 @@ public class Ask {
                 console.print("name: ");
             }
             var coordinates = askCoordinates(console);
-            console.print("age: ");
             var area = askArea(console);
             var population = askPopulation(console);
             var metersAboveSeaLevel = askMetersAboveSeaLevel(console);
