@@ -119,11 +119,12 @@ public class DumpManager {
     /**
      * Загружает коллекцию городов из XML-файла.
      *
-     * @param filename имя файла
+     * @param collection
+     * @param filename   имя файла
      * @return коллекция городов
      * @throws Exception если произошла ошибка при чтении
      */
-    public Collection<City> loadFromFile(String filename) throws Exception {
+    public Collection<City> loadFromFile(LinkedHashSet<City> collection, String filename) throws Exception {
         Collection<City> cities = new LinkedHashSet<>();
 
         // Парсим XML-файл

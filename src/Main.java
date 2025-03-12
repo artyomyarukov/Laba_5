@@ -1,34 +1,62 @@
 import collection.*;
+import managers.CollectionManager;
 import managers.DumpManager;
-import utility.Console;
-import utility.StandartConsole;
 
 
 import java.time.LocalDate;
-import java.util.ArrayList;
+import java.time.LocalDateTime;
 import java.util.LinkedHashSet;
-import java.util.List;
 import java.util.Set;
 
 public class Main {
     public static void main(String[] args)throws Ask.AskBreak {
+        DumpManager dumpManager = new DumpManager();
+        CollectionManager manager = new CollectionManager(dumpManager, "cities.xml");
 
-        try {
-            DumpManager dumpManager = new DumpManager();
-            Set<City> cities = new LinkedHashSet<>(dumpManager.loadFromFile("cities.xml"));
-            cities.add(new City(1, "Moscow", new Coordinates(54.75f, 37.62f), 2511L, 12655050, 156, 495L, 20000000L, Government.REPUBLIC, new Human(LocalDate.of(1960, 1, 1))));
-            cities.add(new City(2, "New York", new Coordinates(40.71f, -74.01f), 783L, 8419600, 10, 212L, 20000000L, Government.REPUBLIC, new Human(LocalDate.of(1950, 5, 15))));
-            // Сохраняем коллекцию в файл
-            dumpManager.saveToFile(cities, "cities.xml");
-            System.out.println("Коллекция успешно сохранена в файл.");
-
-            // Загружаем коллекцию из файла
-            Set<City> loadedCities = new LinkedHashSet<>(dumpManager.loadFromFile("cities.xml"));
-            System.out.println("Коллекция успешно загружена из файла:");
-            loadedCities.forEach(System.out::println);
-        } catch (Exception e) {
-            System.err.println("Ошибка: " + e.getMessage());
+        // Загружаем коллекцию из файла при запуске
+        if (!manager.init()) {
+            System.out.println("Ошибка при загрузке коллекции из файла.");
+            return;
         }
 
+
+        // Выводим текущую коллекцию
+        System.out.println("Текущая коллекция:");
+        System.out.println(manager);
+
+        // Добавляем хук для сохранения коллекции при завершении программы
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            System.out.println("Сохранение коллекции перед завершением программы...");
+            manager.saveCollection();
+        }));
+
+        // Пример добавления нового города
+        City newCity = new City(
+                manager.getFreeId(), // Генерация уникального ID
+                "Moscow",
+                new Coordinates(45.73f, 37.62f),
+                LocalDateTime.now(), // Текущая дата и время
+                2511L, // area
+                12655050, // population
+                156, // metersAboveSeaLevel
+                495L, // telephoneCode
+                20000000L, // agglomeration
+                Government.REPUBLIC, // government
+                new Human(LocalDate.of(1960, 1, 1)) // governor
+        );
+
+        if (manager.add(newCity)) {
+            System.out.println("Город успешно добавлен.");
+        } else {
+            System.out.println("Город уже существует.");
+        }
+
+        // Выводим коллекцию после добавления
+        System.out.println("Коллекция после добавления:");
+        System.out.println(manager);
+
+        // Программа завершается, и хук сохраняет коллекцию в файл
     }
 }
+
+

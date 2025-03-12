@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <cities>
     <city>
-        <id>1</id>
+        <id>2</id>
         <name>Moscow</name>
         <coordinates>
-            <x>54.75</x>
+            <x>45.73</x>
             <y>37.62</y>
         </coordinates>
-        <creationDate>2025-03-12T17:57:07.8098254</creationDate>
+        <creationDate>2025-03-12T20:41:50.2171888</creationDate>
         <area>2511</area>
         <population>12655050</population>
         <metersAboveSeaLevel>156</metersAboveSeaLevel>
@@ -16,168 +16,6 @@
         <government>REPUBLIC</government>
         <governor>
             <birthday>1960-01-01</birthday>
-        </governor>
-    </city>
-    <city>
-        <id>2</id>
-        <name>New York</name>
-        <coordinates>
-            <x>40.71</x>
-            <y>-74.01</y>
-        </coordinates>
-        <creationDate>2025-03-12T17:57:07.8098254</creationDate>
-        <area>783</area>
-        <population>8419600</population>
-        <metersAboveSeaLevel>10</metersAboveSeaLevel>
-        <telephoneCode>212</telephoneCode>
-        <agglomeration>20000000</agglomeration>
-        <government>REPUBLIC</government>
-        <governor>
-            <birthday>1950-05-15</birthday>
-        </governor>
-    </city>
-    <city>
-        <id>1</id>
-        <name>Moscow</name>
-        <coordinates>
-            <x>54.75</x>
-            <y>37.62</y>
-        </coordinates>
-        <creationDate>2025-03-12T17:59:08.9273679</creationDate>
-        <area>2511</area>
-        <population>12655050</population>
-        <metersAboveSeaLevel>156</metersAboveSeaLevel>
-        <telephoneCode>495</telephoneCode>
-        <agglomeration>20000000</agglomeration>
-        <government>REPUBLIC</government>
-        <governor>
-            <birthday>1960-01-01</birthday>
-        </governor>
-    </city>
-    <city>
-        <id>2</id>
-        <name>New York</name>
-        <coordinates>
-            <x>40.71</x>
-            <y>-74.01</y>
-        </coordinates>
-        <creationDate>2025-03-12T17:59:08.9273679</creationDate>
-        <area>783</area>
-        <population>8419600</population>
-        <metersAboveSeaLevel>10</metersAboveSeaLevel>
-        <telephoneCode>212</telephoneCode>
-        <agglomeration>20000000</agglomeration>
-        <government>REPUBLIC</government>
-        <governor>
-            <birthday>1950-05-15</birthday>
-        </governor>
-    </city>
-    <city>
-        <id>1</id>
-        <name>Moscow</name>
-        <coordinates>
-            <x>54.75</x>
-            <y>37.62</y>
-        </coordinates>
-        <creationDate>2025-03-12T17:59:22.5398497</creationDate>
-        <area>2511</area>
-        <population>12655050</population>
-        <metersAboveSeaLevel>156</metersAboveSeaLevel>
-        <telephoneCode>495</telephoneCode>
-        <agglomeration>20000000</agglomeration>
-        <government>REPUBLIC</government>
-        <governor>
-            <birthday>1960-01-01</birthday>
-        </governor>
-    </city>
-    <city>
-        <id>2</id>
-        <name>New York</name>
-        <coordinates>
-            <x>40.71</x>
-            <y>-74.01</y>
-        </coordinates>
-        <creationDate>2025-03-12T17:59:22.5398497</creationDate>
-        <area>783</area>
-        <population>8419600</population>
-        <metersAboveSeaLevel>10</metersAboveSeaLevel>
-        <telephoneCode>212</telephoneCode>
-        <agglomeration>20000000</agglomeration>
-        <government>REPUBLIC</government>
-        <governor>
-            <birthday>1950-05-15</birthday>
-        </governor>
-    </city>
-    <city>
-        <id>1</id>
-        <name>Moscow</name>
-        <coordinates>
-            <x>54.75</x>
-            <y>37.62</y>
-        </coordinates>
-        <creationDate>2025-03-12T18:01:40.028461</creationDate>
-        <area>2511</area>
-        <population>12655050</population>
-        <metersAboveSeaLevel>156</metersAboveSeaLevel>
-        <telephoneCode>495</telephoneCode>
-        <agglomeration>20000000</agglomeration>
-        <government>REPUBLIC</government>
-        <governor>
-            <birthday>1960-01-01</birthday>
-        </governor>
-    </city>
-    <city>
-        <id>2</id>
-        <name>New York</name>
-        <coordinates>
-            <x>40.71</x>
-            <y>-74.01</y>
-        </coordinates>
-        <creationDate>2025-03-12T18:01:40.028461</creationDate>
-        <area>783</area>
-        <population>8419600</population>
-        <metersAboveSeaLevel>10</metersAboveSeaLevel>
-        <telephoneCode>212</telephoneCode>
-        <agglomeration>20000000</agglomeration>
-        <government>REPUBLIC</government>
-        <governor>
-            <birthday>1950-05-15</birthday>
-        </governor>
-    </city>
-    <city>
-        <id>1</id>
-        <name>Moscow</name>
-        <coordinates>
-            <x>54.75</x>
-            <y>37.62</y>
-        </coordinates>
-        <creationDate>2025-03-12T18:02:29.9120497</creationDate>
-        <area>2511</area>
-        <population>12655050</population>
-        <metersAboveSeaLevel>156</metersAboveSeaLevel>
-        <telephoneCode>495</telephoneCode>
-        <agglomeration>20000000</agglomeration>
-        <government>REPUBLIC</government>
-        <governor>
-            <birthday>1960-01-01</birthday>
-        </governor>
-    </city>
-    <city>
-        <id>2</id>
-        <name>New York</name>
-        <coordinates>
-            <x>40.71</x>
-            <y>-74.01</y>
-        </coordinates>
-        <creationDate>2025-03-12T18:02:29.9120497</creationDate>
-        <area>783</area>
-        <population>8419600</population>
-        <metersAboveSeaLevel>10</metersAboveSeaLevel>
-        <telephoneCode>212</telephoneCode>
-        <agglomeration>20000000</agglomeration>
-        <government>REPUBLIC</government>
-        <governor>
-            <birthday>1950-05-15</birthday>
         </governor>
     </city>
 </cities>

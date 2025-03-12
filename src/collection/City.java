@@ -5,6 +5,7 @@ import utility.Validatable;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Objects;
 
 public class City  implements Validatable, Comparable<City>, Serializable {
     private Integer id; //Поле не может быть null, Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
@@ -124,6 +125,20 @@ public class City  implements Validatable, Comparable<City>, Serializable {
             ", population="+population +  ", metersAboveSeaLevel=" + metersAboveSeaLevel + ", telephoneCode=" + telephoneCode +
                 ", agglomeration="+agglomeration+", government="+ government + ", governor="+governor +"]";
     }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        City that = (City) o;
+        return Objects.equals(id, that.id);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(id,name,coordinates,creationDate,area,population,metersAboveSeaLevel,telephoneCode,agglomeration,government,governor);
+    }
+
+
+
 
 
 }
