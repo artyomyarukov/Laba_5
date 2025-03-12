@@ -1,29 +1,34 @@
 import collection.*;
+import managers.DumpManager;
 import utility.Console;
 import utility.StandartConsole;
 
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Main {
-    static List<City> cities = new ArrayList<City>();
     public static void main(String[] args)throws Ask.AskBreak {
-        StandartConsole console = new StandartConsole();
-        cities.add(Ask.askCity(console, 100));
 
-       /* Human h = new Human(java.time.LocalDate.now());
-        Human h2 = new Human(java.time.LocalDate.now().plusDays(1));
-        cities.add(new City(12,"wwqw",new Coordinates(12F,12F), LocalDate.now().atStartOfDay(),1221L,323,434,4334L,4343, Government.JUNTA,h));
-        cities.add(new City(13,"wqw",new Coordinates(11F,12F), LocalDate.now().atStartOfDay(),1221L,323,434,4334L,4343,Government.JUNTA,h2));*/
-        for (City c : cities) {
-            System.out.println(c);
+        try {
+            DumpManager dumpManager = new DumpManager();
+            Set<City> cities = new LinkedHashSet<>(dumpManager.loadFromFile("cities.xml"));
+            cities.add(new City(1, "Moscow", new Coordinates(54.75f, 37.62f), 2511L, 12655050, 156, 495L, 20000000L, Government.REPUBLIC, new Human(LocalDate.of(1960, 1, 1))));
+            cities.add(new City(2, "New York", new Coordinates(40.71f, -74.01f), 783L, 8419600, 10, 212L, 20000000L, Government.REPUBLIC, new Human(LocalDate.of(1950, 5, 15))));
+            // Сохраняем коллекцию в файл
+            dumpManager.saveToFile(cities, "cities.xml");
+            System.out.println("Коллекция успешно сохранена в файл.");
+
+            // Загружаем коллекцию из файла
+            Set<City> loadedCities = new LinkedHashSet<>(dumpManager.loadFromFile("cities.xml"));
+            System.out.println("Коллекция успешно загружена из файла:");
+            loadedCities.forEach(System.out::println);
+        } catch (Exception e) {
+            System.err.println("Ошибка: " + e.getMessage());
         }
-
-
-
-
 
     }
 }
