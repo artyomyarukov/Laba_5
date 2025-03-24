@@ -17,7 +17,6 @@ public class CollectionManager {
         this.lastInitTime = null;
         this.lastSaveTime = null;
         this.dumpManager = dumpManager;
-
         this.filename = filename; // Сохраняем имя файла
     }
 
@@ -136,9 +135,10 @@ public class CollectionManager {
      * @return true, если инициализация прошла успешно, иначе false.
      */
     public boolean init() {
+
         collection.clear();
         try {
-            dumpManager.loadFromFile(filename); // Читаем коллекцию из файла
+            collection = dumpManager.loadFromFile(filename); // Читаем коллекцию из файла
         } catch (Exception e) {
             System.err.println("Ошибка при загрузке коллекции: " + e.getMessage());
             return false;
@@ -147,13 +147,7 @@ public class CollectionManager {
 
         // Проверяем на дубликаты и обновляем currentId
         for (City city : collection) {
-            System.out.println(city);
-            if (byId(city.getId()) != null) { // Если найден дубликат
-                collection.clear();
-                return false;
-            } else {
-                if (city.getId() > currentId) currentId = city.getId(); // Обновляем currentId
-            }
+            if (city.getId() > currentId) currentId = city.getId(); // Обновляем currentId
         }
 
         update(); // Сортируем коллекцию

@@ -31,7 +31,6 @@ public class StandartConsole implements Console {
      * @param obj Ошибка для печати
      */
     public void printError(Object obj) {
-        System.err.println("Error(err): " + obj);
         System.out.println("Error(out): " + obj);
     }
 

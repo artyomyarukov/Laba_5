@@ -30,6 +30,10 @@ public class Human implements Comparable<Human>, Serializable {
 
     @Override
     public String toString(){
-        return birthday.toString();
+        if (birthday != null) {
+            return  birthday.toString();
+        } else {
+            return  ("Дата рождения губернатора не указана.");
+        }
     }
 }

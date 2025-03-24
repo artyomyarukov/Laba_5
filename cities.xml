@@ -2,38 +2,20 @@
 <cities>
     <city>
         <id>1</id>
-        <name>Moscow</name>
+        <name>Samara</name>
         <coordinates>
-            <x>55.75</x>
-            <y>37.62</y>
+            <x>12.2</x>
+            <y>12.9</y>
         </coordinates>
-        <creationDate>2025-03-13T00:19:48.3051702</creationDate>
-        <area>2511</area>
-        <population>12655050</population>
-        <metersAboveSeaLevel>156</metersAboveSeaLevel>
-        <telephoneCode>495</telephoneCode>
-        <agglomeration>20000000</agglomeration>
-        <government>REPUBLIC</government>
+        <creationDate>2025-03-24T02:23:56.1002509</creationDate>
+        <area>3434</area>
+        <population>3232</population>
+        <metersAboveSeaLevel>123</metersAboveSeaLevel>
+        <telephoneCode>2332</telephoneCode>
+        <agglomeration>2323</agglomeration>
+        <government>JUNTA</government>
         <governor>
-            <birthday>1960-01-01</birthday>
-        </governor>
-    </city>
-    <city>
-        <id>2</id>
-        <name>Moscow</name>
-        <coordinates>
-            <x>55.75</x>
-            <y>37.62</y>
-        </coordinates>
-        <creationDate>2025-03-13T00:20:34.038448</creationDate>
-        <area>2511</area>
-        <population>12655050</population>
-        <metersAboveSeaLevel>156</metersAboveSeaLevel>
-        <telephoneCode>495</telephoneCode>
-        <agglomeration>20000000</agglomeration>
-        <government>REPUBLIC</government>
-        <governor>
-            <birthday>1960-01-01</birthday>
+            <birthday>2002-12-23</birthday>
         </governor>
     </city>
 </cities>

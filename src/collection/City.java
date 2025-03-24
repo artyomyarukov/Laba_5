@@ -109,9 +109,9 @@ public class City  implements Validatable, Comparable<City>, Serializable {
         if(creationDate == null) return false;
         if(area == null || area<=0) return false;
         if(population<=0) return false;
-        if(telephoneCode==null || telephoneCode<=0 || telephoneCode>=100000) return false;
+        if(telephoneCode<=0 || telephoneCode>=100000) return false;
         if(government == null) return false;
-        if(governor==null) return false;
+
         return true;
     }
 
@@ -121,8 +121,16 @@ public class City  implements Validatable, Comparable<City>, Serializable {
     }
     @Override
     public String toString() {
+        String t_code;
+        if(telephoneCode==null){
+            t_code="не указан";
+        }
+        else{
+            t_code=telephoneCode.toString();
+        }
+
         return "City [id=" + id + ", name=" + name + ", coordinates=" + coordinates + ", creationDate = " +  creationDate.format(DateTimeFormatter.ISO_DATE_TIME) + ", area=" + area+
-            ", population="+population +  ", metersAboveSeaLevel=" + metersAboveSeaLevel + ", telephoneCode=" + telephoneCode +
+            ", population="+population +  ", metersAboveSeaLevel=" + metersAboveSeaLevel + ", telephoneCode=" + t_code +
                 ", agglomeration="+agglomeration+", government="+ government + ", governor="+governor +"]";
     }
     @Override

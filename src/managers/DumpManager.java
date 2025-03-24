@@ -12,9 +12,17 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Collection;
 import java.util.LinkedHashSet;
+import utility.Console;
 import java.util.Scanner;
 
 public class DumpManager {
+    private final String fileName;
+    private final Console console;
+
+    public DumpManager(String fileName, Console console) {
+        this.fileName = fileName;
+        this.console = console;
+    }
 
     /**
      * Загружает коллекцию городов из XML-файла.
@@ -22,8 +30,8 @@ public class DumpManager {
      * @param filename имя файла
      * @return коллекция городов
      */
-    public Collection<City> loadFromFile(String filename) {
-        Collection<City> cities = new LinkedHashSet<>();
+    public LinkedHashSet<City> loadFromFile(String filename) {
+        LinkedHashSet<City> cities = new LinkedHashSet<>();
 
         // Проверяем, существует ли файл
         File file = new File(filename);
@@ -54,6 +62,7 @@ public class DumpManager {
                 City city = parseCityElement(cityElement);
                 if (city != null) {
                     cities.add(city);
+
                 }
             }
 
@@ -151,10 +160,10 @@ public class DumpManager {
      * @param filename имя файла
      */
     public void saveToFile(Collection<City> cities, String filename) {
-        if (cities.isEmpty()) {
+       /* if (cities.isEmpty()) {
             System.out.println("Коллекция пуста. Файл не будет создан или будет пустым.");
             return;
-        }
+        }*/
 
         try {
             // Создаем новый XML-документ
@@ -176,6 +185,7 @@ public class DumpManager {
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+            transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8"); // Указываем кодировку чтобы русские нахвание сохранялись
             DOMSource source = new DOMSource(document);
             StreamResult result = new StreamResult(new File(filename));
             transformer.transform(source, result);
