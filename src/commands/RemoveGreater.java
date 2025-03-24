@@ -21,13 +21,15 @@ public class RemoveGreater extends Command {
 
     /**
      * Выполняет команду
+     *
      * @return Успешность выполнения команды.
      */
     @Override
     public ExecutionResponse apply(String[] arguments) {
         try {
             // Проверка на наличие аргументов
-            if (!arguments[1].isEmpty()) return new ExecutionResponse(false, "Неправильное количество аргументов!\nИспользование: '" + getName() + "'");
+            if (!arguments[1].isEmpty())
+                return new ExecutionResponse(false, "Неправильное количество аргументов!\nИспользование: '" + getName() + "'");
 
 
             // Запрашиваем данные для города, с которым будем сравнивать

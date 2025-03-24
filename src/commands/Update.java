@@ -7,6 +7,7 @@ import utility.ExecutionResponse;
 
 /**
  * Команда 'update'. Обновляет элемент коллекции.
+ *
  * @author artyom_yarukov
  */
 public class Update extends Command {
@@ -21,21 +22,27 @@ public class Update extends Command {
 
     /**
      * Выполняет команду
+     *
      * @return Успешность выполнения команды.
      */
     @Override
     public ExecutionResponse apply(String[] arguments) {
         try {
-            if (arguments[1].isEmpty()) return new ExecutionResponse(false, "Неправильное количество аргументов!\nИспользование: '" + getName() + "'");
+            if (arguments[1].isEmpty())
+                return new ExecutionResponse(false, "Неправильное количество аргументов!\nИспользование: '" + getName() + "'");
             int id = -1;
-            try { id = Integer.parseInt(arguments[1].trim()); } catch (NumberFormatException e) { return new ExecutionResponse(false, "ID не распознан"); }
+            try {
+                id = Integer.parseInt(arguments[1].trim());
+            } catch (NumberFormatException e) {
+                return new ExecutionResponse(false, "ID не распознан");
+            }
 
             var old = collectionManager.byId(id);
             if (old == null || !collectionManager.getCollection().contains(old)) {
                 return new ExecutionResponse(false, "Не существующий ID");
             }
 
-            console.println("* Создание нового Города:");
+            console.println("Изменение значений города:");
             var d = Ask.askCity(console, old.getId());
             if (d != null && d.validate()) {
                 collectionManager.remove(old.getId());

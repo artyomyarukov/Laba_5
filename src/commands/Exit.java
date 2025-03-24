@@ -5,6 +5,7 @@ import utility.ExecutionResponse;
 
 /**
  * Команда 'exit'. Завершает выполнение.
+ *
  * @author artyom_yarukov
  */
 public class Exit extends Command {
@@ -17,11 +18,13 @@ public class Exit extends Command {
 
     /**
      * Выполняет команду
+     *
      * @return Успешность выполнения команды.
      */
     @Override
     public ExecutionResponse apply(String[] arguments) {
-        if (!arguments[1].isEmpty()) return new ExecutionResponse(false, "Неправильное количество аргументов!\nИспользование: '" + getName() + "'");
+        if (!arguments[1].isEmpty())
+            return new ExecutionResponse(false, "Неправильное количество аргументов!\nИспользование: '" + getName() + "'");
 
         return new ExecutionResponse("exit"); //"Завершение выполнения...");
     }

@@ -2,20 +2,18 @@
 <cities>
     <city>
         <id>1</id>
-        <name>Samara</name>
+        <name>sk</name>
         <coordinates>
-            <x>12.2</x>
-            <y>12.9</y>
+            <x>12.0</x>
+            <y>12.0</y>
         </coordinates>
-        <creationDate>2025-03-24T02:23:56.1002509</creationDate>
-        <area>3434</area>
-        <population>3232</population>
-        <metersAboveSeaLevel>123</metersAboveSeaLevel>
-        <telephoneCode>2332</telephoneCode>
-        <agglomeration>2323</agglomeration>
+        <creationDate>2025-03-24T22:24:55.3288235</creationDate>
+        <area>12</area>
+        <population>12</population>
+        <metersAboveSeaLevel>2</metersAboveSeaLevel>
+        <telephoneCode/>
+        <agglomeration>12</agglomeration>
         <government>JUNTA</government>
-        <governor>
-            <birthday>2002-12-23</birthday>
-        </governor>
+        <governor/>
     </city>
 </cities>

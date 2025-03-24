@@ -2,6 +2,7 @@ package commands;
 
 /**
  * Абстрактная команда с именем и описанием
+ *
  * @author artyom_yarukov
  */
 public abstract class Command implements Describable, Executable {

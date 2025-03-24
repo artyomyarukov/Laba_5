@@ -5,6 +5,7 @@ import utility.ExecutionResponse;
 
 /**
  * Команда 'execute_script'. Выполнить скрипт из файла.
+ *
  * @author artyom_yarukov
  */
 public class ExecuteScript extends Command {
@@ -17,11 +18,13 @@ public class ExecuteScript extends Command {
 
     /**
      * Выполняет команду
+     *
      * @return Успешность выполнения команды.
      */
     @Override
     public ExecutionResponse apply(String[] arguments) {
-        if (arguments[1].isEmpty()) return new ExecutionResponse(false, "Неправильное количество аргументов!\nИспользование: '" + getName() + "'");
+        if (arguments[1].isEmpty())
+            return new ExecutionResponse(false, "Неправильное количество аргументов!\nИспользование: '" + getName() + "'");
 
         return new ExecutionResponse("Выполнение скрипта '" + arguments[1] + "'...");
     }

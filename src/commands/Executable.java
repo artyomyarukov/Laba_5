@@ -1,9 +1,9 @@
 package commands;
+
 import utility.ExecutionResponse;
 
 /**
  * Интерфейс для всех выполняемых команд.
- *
  */
 public interface Executable {
     /**

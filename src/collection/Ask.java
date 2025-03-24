@@ -97,6 +97,10 @@ public class Ask {
             Government government;
             while (true) {
                 var line = console.readln().trim();
+                if (line.equals("")) {
+                    return null;
+                }
+
                 if (line.equals("exit")) throw new AskBreak();
                 if (!line.equals("")) {
                     try {
@@ -105,7 +109,7 @@ public class Ask {
                     } catch (NullPointerException | IllegalArgumentException e) {
                     }
                 }
-                console.print(" Значение должно быть из списка повторите ввод\nGovernment (" + Government.names() + "): ");
+                console.print("Значение должно быть из списка повторите ввод\nGovernment (" + Government.names() + "): ");
             }
             return government;
         } catch (NoSuchElementException | IllegalStateException e) {
@@ -161,7 +165,7 @@ public class Ask {
 
                     }
                 }
-                console.print("Ошибка значение должно быть целочисленным больше 0 и меньше 100000\nповторите ввод telephone code: ");
+                console.print("Ошибка значение должно быть либо целочисленным больше 0 и меньше 100000, либо пустым\nповторите ввод telephone code: ");
             }
             return telephoneCode;
         } catch (NoSuchElementException | IllegalStateException e) {

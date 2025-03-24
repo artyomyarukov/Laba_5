@@ -2,7 +2,8 @@ package utility;
 
 /**
  * Интерфейс для классов, поля которых могут быть вадидными или нет.
- * @author dim0n4eg
+ *
+ * @author artyom_yarukov
  */
 public interface Validatable {
     boolean validate();

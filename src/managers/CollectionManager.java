@@ -72,7 +72,7 @@ public class CollectionManager {
      * @return Свободный ID.
      */
     public int getFreeId() {
-        while (byId(++currentId) != null); // Ищем первый свободный ID
+        while (byId(++currentId) != null) ; // Ищем первый свободный ID
         return currentId;
     }
 
@@ -138,7 +138,7 @@ public class CollectionManager {
 
         collection.clear();
         try {
-            collection = dumpManager.loadFromFile(filename); // Читаем коллекцию из файла
+            collection = dumpManager.loadFromFile(); // Читаем коллекцию из файла
         } catch (Exception e) {
             System.err.println("Ошибка при загрузке коллекции: " + e.getMessage());
             return false;
@@ -159,7 +159,7 @@ public class CollectionManager {
      */
     public void saveCollection() {
         try {
-            dumpManager.saveToFile(collection, filename); // Сохраняем коллекцию в файл
+            dumpManager.saveToFile(collection); // Сохраняем коллекцию в файл
             lastSaveTime = LocalDateTime.now();
         } catch (Exception e) {
             System.err.println("Ошибка при сохранении коллекции: " + e.getMessage());

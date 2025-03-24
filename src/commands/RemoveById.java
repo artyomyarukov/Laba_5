@@ -7,6 +7,7 @@ import utility.ExecutionResponse;
 
 /**
  * Команда 'remove_by_id'. Удаляет элемент из коллекции.
+ *
  * @author dim0n4eg
  */
 public class RemoveById extends Command {
@@ -21,13 +22,19 @@ public class RemoveById extends Command {
 
     /**
      * Выполняет команду
+     *
      * @return Успешность выполнения команды.
      */
     @Override
     public ExecutionResponse apply(String[] arguments) {
-        if (arguments[1].isEmpty()) return new ExecutionResponse(false, "Неправильное количество аргументов!\nИспользование: '" + getName() + "'");
+        if (arguments[1].isEmpty())
+            return new ExecutionResponse(false, "Неправильное количество аргументов!\nИспользование: '" + getName() + "'");
         int id = -1;
-        try { id = Integer.parseInt(arguments[1].trim()); } catch (NumberFormatException e) { return new ExecutionResponse(false, "ID не распознан"); }
+        try {
+            id = Integer.parseInt(arguments[1].trim());
+        } catch (NumberFormatException e) {
+            return new ExecutionResponse(false, "ID не распознан");
+        }
 
         if (collectionManager.byId(id) == null || !collectionManager.getCollection().contains(collectionManager.byId(id)))
             return new ExecutionResponse(false, "Не существующий ID");

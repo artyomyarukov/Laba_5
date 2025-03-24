@@ -6,6 +6,7 @@ import utility.ExecutionResponse;
 
 /**
  * Команда 'save'. Сохраняет коллекцию в файл.
+ *
  * @author artyom_yarukov
  */
 public class Save extends Command {
@@ -20,11 +21,13 @@ public class Save extends Command {
 
     /**
      * Выполняет команду
+     *
      * @return Успешность выполнения команды.
      */
     @Override
     public ExecutionResponse apply(String[] arguments) {
-        if (!arguments[1].isEmpty()) return new ExecutionResponse(false, "Неправильное количество аргументов!\nИспользование: '" + getName() + "'");
+        if (!arguments[1].isEmpty())
+            return new ExecutionResponse(false, "Неправильное количество аргументов!\nИспользование: '" + getName() + "'");
 
         collectionManager.saveCollection();
         return new ExecutionResponse(true, "");

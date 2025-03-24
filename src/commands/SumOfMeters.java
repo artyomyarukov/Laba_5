@@ -20,13 +20,15 @@ public class SumOfMeters extends Command {
 
     /**
      * Выполняет команду
+     *
      * @return Успешность выполнения команды.
      */
     @Override
     public ExecutionResponse apply(String[] arguments) {
         try {
             // Проверка на наличие аргументов
-            if (!arguments[1].isEmpty()) return new ExecutionResponse(false, "Неправильное количество аргументов!\nИспользование: '" + getName() + "'");
+            if (!arguments[1].isEmpty())
+                return new ExecutionResponse(false, "Неправильное количество аргументов!\nИспользование: '" + getName() + "'");
 
             // Вычисляем сумму значений metersAboveSeaLevel
             int sum = collectionManager.getCollection().stream()

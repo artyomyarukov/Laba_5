@@ -50,6 +50,7 @@ public class Runner {
 
     /**
      * Проверяет рекурсивность выполнения скриптов.
+     *
      * @param argument Название запускаемого скрипта
      * @return можно ли выполнять скрипт.
      */
@@ -64,7 +65,12 @@ public class Runner {
                     console.selectConsoleScanner();
                     console.println("Была замечена рекурсия! Введите максимальную глубину рекурсии (0..500)");
                     while (lengthRecursion < 0 || lengthRecursion > 500) {
-                        try { console.print("> "); lengthRecursion = Integer.parseInt(console.readln().trim()); } catch (NumberFormatException e) { console.println("длина не распознана"); }
+                        try {
+                            console.print("> ");
+                            lengthRecursion = Integer.parseInt(console.readln().trim());
+                        } catch (NumberFormatException e) {
+                            console.println("длина не распознана");
+                        }
                     }
                     console.selectFileScanner(scriptScanner);
                 }
@@ -78,6 +84,7 @@ public class Runner {
 
     /**
      * Режим для запуска скрипта.
+     *
      * @param argument Аргумент скрипта
      * @return Код завершения.
      */
@@ -110,7 +117,7 @@ public class Runner {
 
                 commandStatus = needLaunch ? launchCommand(userCommand) : new ExecutionResponse("Превышена максимальная глубина рекурсии");
                 if (userCommand[0].equals("execute_script")) console.selectFileScanner(scriptScanner);
-                executionOutput.append(commandStatus.getMassage()+"\n");
+                executionOutput.append(commandStatus.getMassage() + "\n");
             } while (commandStatus.getExitCode() && !commandStatus.getMassage().equals("exit") && console.isCanReadln());
 
             console.selectConsoleScanner();
@@ -134,6 +141,7 @@ public class Runner {
 
     /**
      * Launchs the command.
+     *
      * @param userCommand Команда для запуска
      * @return Код завершения.
      */
@@ -141,16 +149,19 @@ public class Runner {
         if (userCommand[0].equals("")) return new ExecutionResponse("");
         var command = commandManager.getCommands().get(userCommand[0]);
 
-        if (command == null) return new ExecutionResponse(false, "Команда '" + userCommand[0] + "' не найдена. Наберите 'help' для справки");
+        if (command == null)
+            return new ExecutionResponse(false, "Команда '" + userCommand[0] + "' не найдена. Наберите 'help' для справки");
 
         switch (userCommand[0]) {
             case "execute_script" -> {
                 ExecutionResponse tmp = commandManager.getCommands().get("execute_script").apply(userCommand);
                 if (!tmp.getExitCode()) return tmp;
                 ExecutionResponse tmp2 = scriptMode(userCommand[1]);
-                return new ExecutionResponse(tmp2.getExitCode(), tmp.getMassage()+"\n"+tmp2.getMassage().trim());
+                return new ExecutionResponse(tmp2.getExitCode(), tmp.getMassage() + "\n" + tmp2.getMassage().trim());
             }
-            default -> { return command.apply(userCommand); }
+            default -> {
+                return command.apply(userCommand);
+            }
         }
     }
 }

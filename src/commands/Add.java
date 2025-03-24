@@ -8,6 +8,7 @@ import utility.ExecutionResponse;
 
 /**
  * Команда 'add'. Добавляет новый элемент в коллекцию.
+ *
  * @author artem_yarukov
  */
 public class Add extends Command {
@@ -21,15 +22,15 @@ public class Add extends Command {
     }
 
     /**
-     *
-     *
      * Выполняет команду
+     *
      * @return Успешность выполнения команды.
      */
     @Override
     public ExecutionResponse apply(String[] arguments) {
         try {
-            if (!arguments[1].isEmpty()) return new ExecutionResponse(false, "Неправильное количество аргументов!\nИспользование: '" + getName() + "'");
+            if (!arguments[1].isEmpty())
+                return new ExecutionResponse(false, "Неправильное количество аргументов!\nИспользование: '" + getName() + "'");
 
             console.println("Создание нового Города:");
             City d = Ask.askCity(console, collectionManager.getFreeId());
@@ -37,9 +38,9 @@ public class Add extends Command {
             if (d != null && d.validate()) {
                 collectionManager.add(d);
                 return new ExecutionResponse("Город успешно добавлен!");
-            } else return new ExecutionResponse(false,"Поля города не валидны! Дракон не создан!");
+            } else return new ExecutionResponse(false, "Поля города не валидны! Дракон не создан!");
         } catch (Ask.AskBreak e) {
-            return new ExecutionResponse(false,"Отмена...");
+            return new ExecutionResponse(false, "Отмена...");
         }
     }
 }

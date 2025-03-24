@@ -4,10 +4,12 @@ import utility.Console;
 import managers.CollectionManager;
 
 import java.time.LocalDateTime;
+
 import utility.ExecutionResponse;
 
 /**
  * Команда 'info'. Выводит информацию о коллекции.
+ *
  * @author artyom_yarukov
  */
 public class Info extends Command {
@@ -22,6 +24,7 @@ public class Info extends Command {
 
     /**
      * Выполняет команду
+     *
      * @return Успешность выполнения команды.
      */
     @Override
@@ -37,11 +40,11 @@ public class Info extends Command {
         String lastSaveTimeString = (lastSaveTime == null) ? "в данной сессии сохранения еще не происходило" :
                 lastSaveTime.toLocalDate().toString() + " " + lastSaveTime.toLocalTime().toString();
 
-        var s="Сведения о коллекции:\n";
-        s+=" Тип: " + collectionManager.getCollection().getClass().toString()+"\n";
-        s+=" Количество элементов: " + collectionManager.getCollection().size()+"\n";
-        s+=" Дата последнего сохранения: " + lastSaveTimeString+"\n";
-        s+=" Дата последней инициализации: " + lastInitTimeString;
+        var s = "Сведения о коллекции:\n";
+        s += " Тип: " + collectionManager.getCollection().getClass().toString() + "\n";
+        s += " Количество элементов: " + collectionManager.getCollection().size() + "\n";
+        s += " Дата последнего сохранения: " + lastSaveTimeString + "\n";
+        s += " Дата последней инициализации: " + lastInitTimeString;
         return new ExecutionResponse(s);
     }
 }

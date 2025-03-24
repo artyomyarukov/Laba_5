@@ -13,7 +13,15 @@ public class ExecutionResponse {
         this(true, s);
     }
 
-    public boolean getExitCode() { return exitCode; }
-    public String getMassage() { return massage; }
-    public String toString() { return String.valueOf(exitCode)+";"+massage; }
+    public boolean getExitCode() {
+        return exitCode;
+    }
+
+    public String getMassage() {
+        return massage;
+    }
+
+    public String toString() {
+        return String.valueOf(exitCode) + ";" + massage;
+    }
 }

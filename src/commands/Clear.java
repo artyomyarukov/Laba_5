@@ -7,6 +7,7 @@ import utility.ExecutionResponse;
 
 /**
  * Команда 'clear'. Очищает коллекцию.
+ *
  * @author artyom_yarukov
  */
 public class Clear extends Command {
@@ -21,6 +22,7 @@ public class Clear extends Command {
 
     /**
      * Выполняет команду
+     *
      * @return Успешность выполнения команды.
      */
     @Override

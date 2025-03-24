@@ -12,6 +12,7 @@ public class StandartConsole implements Console {
 
     /**
      * Выводит obj.toString() в консоль
+     *
      * @param obj Объект для печати
      */
     public void print(Object obj) {
@@ -20,6 +21,7 @@ public class StandartConsole implements Console {
 
     /**
      * Выводит obj.toString() + \n в консоль
+     *
      * @param obj Объект для печати
      */
     public void println(Object obj) {
@@ -28,23 +30,25 @@ public class StandartConsole implements Console {
 
     /**
      * Выводит ошибка: obj.toString() в консоль
+     *
      * @param obj Ошибка для печати
      */
     public void printError(Object obj) {
-        System.out.println("Error(out): " + obj);
+        System.err.println("Error(out): " + obj);
     }
 
     public String readln() throws NoSuchElementException, IllegalStateException {
-        return (fileScanner!=null?fileScanner:defScanner).nextLine();
+        return (fileScanner != null ? fileScanner : defScanner).nextLine();
     }
 
     public boolean isCanReadln() throws IllegalStateException {
-        return (fileScanner!=null?fileScanner:defScanner).hasNextLine();
+        return (fileScanner != null ? fileScanner : defScanner).hasNextLine();
     }
 
     /**
      * Выводит таблицу из 2 колонок
-     * @param elementLeft Левый элемент колонки.
+     *
+     * @param elementLeft  Левый элемент колонки.
      * @param elementRight Правый элемент колонки.
      */
     public void printTable(Object elementLeft, Object elementRight) {
