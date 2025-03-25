@@ -5,6 +5,10 @@ import collection.City;
 import java.time.LocalDateTime;
 import java.util.*;
 
+/**
+ * Класс для работы с коллекцией
+ */
+
 public class CollectionManager {
     private int currentId = 0; // Счётчик для генерации уникальных ID
     private LinkedHashSet<City> collection = new LinkedHashSet<>(); // Основная коллекция
@@ -131,7 +135,6 @@ public class CollectionManager {
 
     /**
      * Инициализирует коллекцию из файла.
-     *
      * @return true, если инициализация прошла успешно, иначе false.
      */
     public boolean init() {
@@ -165,6 +168,11 @@ public class CollectionManager {
             System.err.println("Ошибка при сохранении коллекции: " + e.getMessage());
         }
     }
+
+    /**
+     * Строковое представление коллекции
+     * @return строковое представление коллекции
+     */
 
     @Override
     public String toString() {

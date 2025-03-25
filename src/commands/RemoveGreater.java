@@ -13,6 +13,12 @@ public class RemoveGreater extends Command {
     private final Console console;
     private final CollectionManager collectionManager;
 
+    /**
+     * Конструктор команды
+     * @param console - консоль для ввода/вывода
+     * @param collectionManager - объект collectionManager для работы с коллекцией
+     */
+
     public RemoveGreater(Console console, CollectionManager collectionManager) {
         super("remove_greater {element}", "удалить из коллекции все элементы, превышающие заданный");
         this.console = console;

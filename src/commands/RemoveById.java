@@ -7,12 +7,16 @@ import utility.ExecutionResponse;
 
 /**
  * Команда 'remove_by_id'. Удаляет элемент из коллекции.
- *
- * @author dim0n4eg
  */
 public class RemoveById extends Command {
     private final Console console;
     private final CollectionManager collectionManager;
+
+    /**
+     * Конструктор команды
+     * @param console - консоль для ввода/вывода
+     * @param collectionManager - объект collectionManager для работы с коллекцией
+     */
 
     public RemoveById(Console console, CollectionManager collectionManager) {
         super("remove_by_id <ID>", "удалить элемент из коллекции по ID");

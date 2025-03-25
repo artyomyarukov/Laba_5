@@ -8,12 +8,16 @@ import utility.ExecutionResponse;
 
 /**
  * Команда 'add'. Добавляет новый элемент в коллекцию.
- *
- * @author artem_yarukov
  */
 public class Add extends Command {
     private final Console console;
     private final CollectionManager collectionManager;
+
+    /**
+     * Конструктор команды
+     * @param console - консоль для ввода/вывода
+     * @param collectionManager - объект collectionManager для работы с коллекцией
+     */
 
     public Add(Console console, CollectionManager collectionManager) {
         super("add {element}", "добавить новый элемент в коллекцию");
@@ -23,7 +27,6 @@ public class Add extends Command {
 
     /**
      * Выполняет команду
-     *
      * @return Успешность выполнения команды.
      */
     @Override

@@ -7,12 +7,16 @@ import utility.ExecutionResponse;
 
 /**
  * Команда 'clear'. Очищает коллекцию.
- *
- * @author artyom_yarukov
  */
 public class Clear extends Command {
     private final Console console;
     private final CollectionManager collectionManager;
+
+    /**
+     * Конструктор команды
+     * @param console - консоль для ввода/вывода
+     * @param collectionManager - объект collectionManager для работы с коллекцией
+     */
 
     public Clear(Console console, CollectionManager collectionManager) {
         super("clear", "очистить коллекцию");

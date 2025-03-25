@@ -15,6 +15,12 @@ public class GroupCounting extends Command {
     private final Console console;
     private final CollectionManager collectionManager;
 
+    /**
+     * Конструктор команды
+     * @param console - консоль для ввода/вывода
+     * @param collectionManager - объект collectionManager для работы с коллекцией
+     */
+
     public GroupCounting(Console console, CollectionManager collectionManager) {
         super("group_counting_by_population", "группировать элементы коллекции по значению поля population и вывести количество элементов в каждой группе");
         this.console = console;
@@ -23,7 +29,6 @@ public class GroupCounting extends Command {
 
     /**
      * Выполняет команду
-     *
      * @return Успешность выполнения команды.
      */
     @Override

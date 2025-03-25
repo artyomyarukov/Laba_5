@@ -6,12 +6,16 @@ import utility.ExecutionResponse;
 
 /**
  * Команда 'save'. Сохраняет коллекцию в файл.
- *
- * @author artyom_yarukov
  */
 public class Save extends Command {
     private final Console console;
     private final CollectionManager collectionManager;
+
+    /**
+     * Конструктор команды
+     * @param console - консоль для ввода/вывода
+     * @param collectionManager - объект collectionManager для работы с коллекцией
+     */
 
     public Save(Console console, CollectionManager collectionManager) {
         super("save", "сохранить коллекцию в файл");
@@ -21,7 +25,6 @@ public class Save extends Command {
 
     /**
      * Выполняет команду
-     *
      * @return Успешность выполнения команды.
      */
     @Override

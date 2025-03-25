@@ -2,12 +2,16 @@ package commands;
 
 /**
  * Абстрактная команда с именем и описанием
- *
- * @author artyom_yarukov
  */
 public abstract class Command implements Describable, Executable {
     private final String name;
     private final String description;
+
+    /**
+     * Конструктор команды
+     * @param name - имя команды
+     * @param description - описание команды
+     */
 
     public Command(String name, String description) {
         this.name = name;
@@ -28,6 +32,12 @@ public abstract class Command implements Describable, Executable {
         return description;
     }
 
+    /**
+     * Сравнение двух команд
+     * @param obj - объект сравнение
+     * @return резултат сравнение двух команд, true если имя и описание совпадают, false в противном случае
+     */
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
@@ -36,10 +46,20 @@ public abstract class Command implements Describable, Executable {
         return name.equals(command.name) && description.equals(command.description);
     }
 
+    /**
+     * Получение хэш кода команды
+     * @return хэш код команды
+     */
+
     @Override
     public int hashCode() {
         return name.hashCode() + description.hashCode();
     }
+
+    /**
+     * Строковое представление команды
+     * @return строковое представление команды
+     */
 
     @Override
     public String toString() {

@@ -13,6 +13,12 @@ public class AddIfMax extends Command {
     private final Console console;
     private final CollectionManager collectionManager;
 
+    /**
+     * Конструктор команды
+     * @param console - консоль для ввода/вывода
+     * @param collectionManager - объект collectionManager для работы с коллекцией
+     */
+
     public AddIfMax(Console console, CollectionManager collectionManager) {
         super("add_if_max {element}", "добавить новый элемент в коллекцию, если его значение превышает значение наибольшего элемента этой коллекции");
         this.console = console;
@@ -21,7 +27,6 @@ public class AddIfMax extends Command {
 
     /**
      * Выполняет команду
-     *
      * @return Успешность выполнения команды.
      */
     @Override

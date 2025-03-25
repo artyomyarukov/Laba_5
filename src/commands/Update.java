@@ -7,12 +7,16 @@ import utility.ExecutionResponse;
 
 /**
  * Команда 'update'. Обновляет элемент коллекции.
- *
- * @author artyom_yarukov
  */
 public class Update extends Command {
     private final Console console;
     private final CollectionManager collectionManager;
+
+    /**
+     * Конструктор команды
+     * @param console - консоль для ввода/вывода
+     * @param collectionManager - объект collectionManager для работы с коллекцией
+     */
 
     public Update(Console console, CollectionManager collectionManager) {
         super("update <ID> {element}", "обновить значение элемента коллекции по ID");
@@ -22,7 +26,6 @@ public class Update extends Command {
 
     /**
      * Выполняет команду
-     *
      * @return Успешность выполнения команды.
      */
     @Override

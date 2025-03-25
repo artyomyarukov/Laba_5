@@ -69,9 +69,18 @@ public class StandartConsole implements Console {
         return P1;
     }
 
+    /**
+     * Устнавливает ввод из файла
+     * @param scanner текущий scanner
+     */
+
     public void selectFileScanner(Scanner scanner) {
         this.fileScanner = scanner;
     }
+
+    /**
+     * Устанавливает ввод из консоли
+     */
 
     public void selectConsoleScanner() {
         this.fileScanner = null;

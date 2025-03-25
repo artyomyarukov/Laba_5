@@ -5,11 +5,15 @@ import utility.ExecutionResponse;
 
 /**
  * Команда 'execute_script'. Выполнить скрипт из файла.
- *
- * @author artyom_yarukov
  */
 public class ExecuteScript extends Command {
     private final Console console;
+
+    /**
+     * Конструктор команды
+     * @param console - консоль для ввода/выводай
+     */
+
 
     public ExecuteScript(Console console) {
         super("execute_script <file_name>", "исполнить скрипт из указанного файла");
@@ -18,7 +22,6 @@ public class ExecuteScript extends Command {
 
     /**
      * Выполняет команду
-     *
      * @return Успешность выполнения команды.
      */
     @Override

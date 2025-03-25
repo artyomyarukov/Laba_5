@@ -13,6 +13,11 @@ public class Help extends Command {
     private final Console console;
     private final CommandManager commandManager;
 
+    /**
+     * Конструктор команды
+     * @param console - консоль для ввода/вывода
+     */
+
     public Help(Console console, CommandManager commandManager) {
         super("help", "вывести справку по доступным командам");
         this.console = console;

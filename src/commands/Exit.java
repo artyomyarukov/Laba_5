@@ -11,6 +11,11 @@ import utility.ExecutionResponse;
 public class Exit extends Command {
     private final Console console;
 
+    /**
+     * Конструктор команды
+     * @param console - консоль для ввода/вывода
+     */
+
     public Exit(Console console) {
         super("exit", "завершить программу (без сохранения в файл)");
         this.console = console;
@@ -18,7 +23,6 @@ public class Exit extends Command {
 
     /**
      * Выполняет команду
-     *
      * @return Успешность выполнения команды.
      */
     @Override

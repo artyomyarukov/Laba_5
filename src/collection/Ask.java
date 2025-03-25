@@ -8,28 +8,28 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.NoSuchElementException;
 
+/**
+ * Класс, запрашивающий у пользователя данные для создания объектов.
+ */
+
 public class Ask {
+    /**
+     * Исключение выбрасывающееся для прерывания ввода
+     */
+
     public static class AskBreak extends Exception {
     }
 
+    /**
+     * Запрашивает у пользователя данные для создания объекта City
+     * @param console Консоль для ввода/вывода
+     * @param id Интдефекатор
+     * @return объект City с введенными данными
+     * @throws AskBreak Исключение, выбрасываемое при некорректном вводе
+     */
 
     public static City askCity(Console console, Integer id) throws AskBreak {
-        /*
-    private Integer id; //Поле не может быть null, Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
-    private String name; //Поле не может быть null, Строка не может быть пустой
-    private Coordinates coordinates; //Поле не может быть null
-    private java.time.LocalDateTime creationDate; //Поле не может быть null, Значение этого поля должно генерироваться автоматически
-    private Long area; //Значение поля должно быть больше 0, Поле не может быть null
-    private int population; //Значение поля должно быть больше 0
-    private Integer metersAboveSeaLevel;
-    private Long telephoneCode; //Поле может быть null, Значение поля должно быть больше 0, Максимальное значение поля: 100000
-    private long agglomeration;
-    private Government government;//Поле не может быть null
-    private Human governor
 
-
-
-    */
         try {
             console.print("name: ");
             String name;
@@ -54,6 +54,13 @@ public class Ask {
             return null;
         }
     }
+    /**
+     * Запрашивает у пользователя данные для создания объекта Human
+     * @param console Консоль для ввода/вывода
+     * @return объект City с введенными данными
+     * @throws AskBreak Исключение, выбрасываемое при некорректном вводе
+     */
+
 
     public static Human askGovernor(Console console) throws AskBreak {
         try {
@@ -90,6 +97,13 @@ public class Ask {
 
     }
 
+    /**
+     * Запрашивает у пользователя данные для создания объекта Government
+     * @param console Консоль для ввода/вывода
+     * @return объект City с введенными данными
+     * @throws AskBreak Исключение, выбрасываемое при некорректном вводе
+     */
+
 
     public static Government askGovernment(Console console) throws AskBreak {
         try {
@@ -120,6 +134,12 @@ public class Ask {
 
     }
 
+    /**
+     * Запрашивает у пользователя данные для ввода agglomeration
+     * @param console Консоль для ввода/вывода
+     * @return объект City с введенными данными
+     * @throws AskBreak Исключение, выбрасываемое при некорректном вводе
+     */
 
     public static long askAgglomeretion(Console console) throws AskBreak {
         try {
@@ -146,6 +166,13 @@ public class Ask {
             return 0;
         }
     }
+
+    /**
+     * Запрашивает у пользователя данные для ввода telephoneCod
+     * @param console Консоль для ввода/вывода
+     * @return объект City с введенными данными
+     * @throws AskBreak Исключение, выбрасываемое при некорректном вводе
+     */
 
     public static Long askTelephoneCode(Console console) throws AskBreak {
         try {
@@ -174,6 +201,12 @@ public class Ask {
         }
     }
 
+    /**
+     * Запрашивает у пользователя данные для ввода metersAboveSeaLevel
+     * @param console Консоль для ввода/вывода
+     * @return объект City с введенными данными
+     * @throws AskBreak Исключение, выбрасываемое при некорректном вводе
+     */
 
     public static Integer askMetersAboveSeaLevel(Console console) throws AskBreak {
         try {
@@ -198,6 +231,14 @@ public class Ask {
             return null;
         }
     }
+
+    /**
+     * Запрашивает у пользователя данные для ввода area
+     * @param console Консоль для ввода/вывода
+     * @return объект City с введенными данными
+     * @throws AskBreak Исключение, выбрасываемое при некорректном вводе
+     */
+
 
     public static Long askArea(Console console) throws AskBreak {
         try {
@@ -225,6 +266,13 @@ public class Ask {
 
     }
 
+    /**
+     * Запрашивает у пользователя данные для ввода population
+     * @param console Консоль для ввода/вывода
+     * @return объект City с введенными данными
+     * @throws AskBreak Исключение, выбрасываемое при некорректном вводе
+     */
+
     public static int askPopulation(Console console) throws AskBreak {
         try {
 
@@ -250,6 +298,13 @@ public class Ask {
             return 0;
         }
     }
+
+    /**
+     * Запрашивает у пользователя данные для запроса объекта Coordinates
+     * @param console Консоль для ввода/вывода
+     * @return объект City с введенными данными
+     * @throws AskBreak Исключение, выбрасываемое при некорректном вводе
+     */
 
     public static Coordinates askCoordinates(Console console) throws AskBreak {
         try {

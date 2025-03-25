@@ -30,7 +30,6 @@ public class DumpManager {
 
     /**
      * Загружает коллекцию городов из XML-файла
-     *
      * @return загруженная коллекция городов
      */
     public LinkedHashSet<City> loadFromFile() {
@@ -75,7 +74,6 @@ public class DumpManager {
 
     /**
      * Сохраняет коллекцию городов в XML-файл
-     *
      * @param cities коллекция городов для сохранения
      */
     public void saveToFile(Collection<City> cities) {
@@ -108,9 +106,8 @@ public class DumpManager {
 
     /**
      * Создает элемент <city> для XML-документа
-     *
      * @param document XML-документ
-     * @param city     объект City
+     * @param city объект City
      * @return элемент <city>
      */
     private Element createCityElement(Document document, City city) {
@@ -133,8 +130,7 @@ public class DumpManager {
 
     /**
      * Создает элемент <coordinates> для XML-документа
-     *
-     * @param document    XML-документ
+     * @param document XML-документ
      * @param coordinates объект Coordinates
      * @return элемент <coordinates>
      */
@@ -147,7 +143,6 @@ public class DumpManager {
 
     /**
      * Создает элемент <governor> для XML-документа
-     *
      * @param document XML-документ
      * @param governor объект Human
      * @return элемент <governor>
@@ -162,10 +157,9 @@ public class DumpManager {
 
     /**
      * Создает текстовый элемент для XML-документа
-     *
      * @param document XML-документ
-     * @param name     имя элемента
-     * @param value    значение элемента
+     * @param name имя элемента
+     * @param value значение элемента
      * @return текстовый элемент
      */
     private Element createElement(Document document, String name, String value) {
@@ -178,7 +172,6 @@ public class DumpManager {
 
     /**
      * Парсит элемент <city> из XML
-     *
      * @param cityElement элемент XML
      * @return объект City
      */

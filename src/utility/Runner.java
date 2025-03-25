@@ -11,6 +11,10 @@ import java.nio.file.*;
 import managers.CommandManager;
 import utility.Console;
 
+/**
+ * Класс, который выполняет программу
+ */
+
 public class Runner {
     private Console console;
     private final CommandManager commandManager;
@@ -140,7 +144,7 @@ public class Runner {
     }
 
     /**
-     * Launchs the command.
+     * Загрузка и выполнение команды
      *
      * @param userCommand Команда для запуска
      * @return Код завершения.

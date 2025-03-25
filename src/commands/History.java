@@ -8,12 +8,15 @@ import java.util.stream.Collectors;
 
 /**
  * Команда 'history'. Вывыодит историю команд.
- *
- * @author dim0n4eg
  */
 public class History extends Command {
     private final Console console;
     private final CommandManager commandManager;
+
+    /**
+     * Конструктор команды
+     * @param console - консоль для ввода/вывода
+     */
 
     public History(Console console, CommandManager commandManager) {
         super("history", "Вывыодит историю команд");
@@ -23,7 +26,6 @@ public class History extends Command {
 
     /**
      * Выполняет команду
-     *
      * @return Успешность выполнения команды.
      */
     @Override

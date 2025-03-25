@@ -12,6 +12,12 @@ public class SumOfMeters extends Command {
     private final Console console;
     private final CollectionManager collectionManager;
 
+    /**
+     * Конструктор команды
+     * @param console - консоль для ввода/вывода
+     * @param collectionManager - объект collectionManager для работы с коллекцией
+     */
+
     public SumOfMeters(Console console, CollectionManager collectionManager) {
         super("sum_of_meters_above_sea_level", "вывести сумму значений поля metersAboveSeaLevel для всех элементов коллекции");
         this.console = console;
@@ -20,7 +26,6 @@ public class SumOfMeters extends Command {
 
     /**
      * Выполняет команду
-     *
      * @return Успешность выполнения команды.
      */
     @Override

@@ -8,12 +8,11 @@ import utility.Runner;
 import utility.StandartConsole;
 import commands.*;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.Collection;
-import java.util.LinkedHashSet;
-import java.util.Scanner;
-import java.util.Set;
+
+/**
+ * Главный класс программы
+ * Вариант 6172
+ */
 
 public class Main {
     public static void main(String[] args) throws Ask.AskBreak {

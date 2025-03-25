@@ -9,12 +9,16 @@ import utility.ExecutionResponse;
 
 /**
  * Команда 'info'. Выводит информацию о коллекции.
- *
- * @author artyom_yarukov
  */
 public class Info extends Command {
     private final Console console;
     private final CollectionManager collectionManager;
+
+    /**
+     * Конструктор команды
+     * @param console - консоль для ввода/вывода
+     * @param collectionManager - объект collectionManager для работы с коллекцией
+     */
 
     public Info(Console console, CollectionManager collectionManager) {
         super("info", "вывести информацию о коллекции");
@@ -24,7 +28,6 @@ public class Info extends Command {
 
     /**
      * Выполняет команду
-     *
      * @return Успешность выполнения команды.
      */
     @Override

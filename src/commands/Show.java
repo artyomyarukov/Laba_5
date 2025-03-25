@@ -6,12 +6,16 @@ import utility.ExecutionResponse;
 
 /**
  * Команда 'show'. Выводит все элементы коллекции.
- *
- * @author artyom_yarukov
  */
 public class Show extends Command {
     private final Console console;
     private final CollectionManager collectionManager;
+
+    /**
+     * Конструктор команды
+     * @param console - консоль для ввода/вывода
+     * @param collectionManager - объект collectionManager для работы с коллекцией
+     */
 
     public Show(Console console, CollectionManager collectionManager) {
         super("show", "вывести в стандартный поток вывода все элементы коллекции в строковом представлении");

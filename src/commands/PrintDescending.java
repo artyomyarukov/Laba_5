@@ -16,6 +16,12 @@ public class PrintDescending extends Command {
     private final Console console;
     private final CollectionManager collectionManager;
 
+    /**
+     * Конструктор команды
+     * @param console - консоль для ввода/вывода
+     * @param collectionManager - объект collectionManager для работы с коллекцией
+     */
+
     public PrintDescending(Console console, CollectionManager collectionManager) {
         super("print_descending", "вывести элементы коллекции в порядке убывания");
         this.console = console;
@@ -24,7 +30,6 @@ public class PrintDescending extends Command {
 
     /**
      * Выполняет команду
-     *
      * @return Успешность выполнения команды.
      */
     @Override
